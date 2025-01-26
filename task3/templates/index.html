@@ -5,23 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Generator</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .generated-text {
+            background-color: #ffffff;
+            border-radius: 5px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="text-center">Text Generator</h1>
-        <form method="POST" class="mt-4">
-            <div class="form-group">
-                <label for="prompt">Enter your prompt:</label>
-                <input type="text" class="form-control" id="prompt" name="prompt" required>
+    <div class="container">
+        <div class="card">
+            <div class="card-body">
+                <h1 class="text-center">Language Modeling</h1>
+                <form method="POST" class="mt-4">
+                    <div class="form-group">
+                        <label for="prompt">Enter your text:</label>
+                        <input type="text" class="form-control" id="prompt" name="prompt" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Generate</button>
+                </form>
+                {% if generated_text %}
+                <div class="mt-4 generated-text">
+                    <h2>Generated Text:</h2>
+                    <p>{{ generated_text }}</p>
+                </div>
+                {% endif %}
             </div>
-            <button type="submit" class="btn btn-primary">Generate</button>
-        </form>
-        {% if generated_text %}
-        <div class="mt-4">
-            <h2>Generated Text:</h2>
-            <p class="border p-3">{{ generated_text }}</p>
         </div>
-        {% endif %}
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
