@@ -35,4 +35,4 @@ Batch Size: Number of samples per gradient update.
 Epochs: Number of times the entire dataset is passed through the model.(5 Epochs)
 Validation: Monitor the model's performance on a validation set to prevent overfitting.
 
-Task 2: Web Deployed (FLask)
+Task 3: Web Deployed (FLask)
